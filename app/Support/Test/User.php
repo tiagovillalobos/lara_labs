@@ -10,11 +10,15 @@ class User
     private string $email;
     private Carbon $birthday;
 
-    public function __construct(string $name, string $email, Carbon|string $birthday)
+    public function __construct(array $attributes = [])
     {
-        $this->setName(name: $name);
-        $this->setEmail(email: $email);
-        $this->setBirthday(birthday: $birthday);
+        foreach ($attributes as $key => $value) {
+            if (!method_exists(object_or_class: $this, method: 'set' . ucfirst(string: $key))) {
+                continue;
+            }
+
+            $this->{'set' . ucfirst(string: $key)}($value);
+        }
     }
 
     public function getName(): string
