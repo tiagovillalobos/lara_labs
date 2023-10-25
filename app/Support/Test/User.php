@@ -1,6 +1,6 @@
 <?php 
 
-namespace App\Support\Classes;
+namespace App\Support\Test;
 
 use Carbon\Carbon;
 

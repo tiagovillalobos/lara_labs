@@ -2,7 +2,7 @@
 
 namespace Tests\Feature;
 
-use App\Support\Classes\User;
+use App\Support\Test\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Support\Facades\Date;
